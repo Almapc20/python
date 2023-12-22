@@ -1,0 +1,41 @@
+# nums = [0,0,1,1,1,1,2,3,3]
+# Output: 7, nums = [0,0,1,1,2,3,3,_,_]
+nums = [0,0,1,1,1,1,2,3,3]
+i=1
+k=len(nums)
+r=0
+list1=[]
+flag= True
+for item in nums: 
+    if i< k :
+        if(item== nums[i])and (r< 2):
+            # print(item)
+            list1.append(item)
+            r+=1
+            
+        elif(item in list1):
+            r+=1
+            if flag and r< 3:
+                list1.append(item)
+                r= 0
+            elif(nums[i] not in list1):
+                r=0
+
+        elif (item!= nums[i]):
+                list1.append(item)
+    else:
+        if nums[i-2]== nums[i-1]:
+            list1.append(item)
+        break
+    i+=1
+print(nums)    
+print(list1)
+resLen=len(list1)
+iter=len(nums)- len(list1)
+for item in range(iter):
+    list1.append('-')
+    
+print(f"{resLen}, nums = {list1}")
+
+
+
