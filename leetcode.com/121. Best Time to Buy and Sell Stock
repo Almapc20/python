@@ -5,11 +5,12 @@
 # Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
 # Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 
-prices = [7,1,5,3,6,4]
+prices = [7,6,4,3,1]
+len1=len(prices)
 flag=0
 min1= min(prices)
-for i in prices:
-    if min1== i:
+for i in range(0, len1):
+    if min1== prices[i]:
         flag=i
         break
 list1=prices[flag:]
