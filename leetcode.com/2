@@ -1,0 +1,19 @@
+l1 = [9,9,9,9,9,9,9]
+l2 = [9,9,9,9]
+list1=[]
+res1= l1[0]
+for i in range (len(l1)):
+        if i !=0 :
+            res1= res1+ l1[i]*10**i
+res2= l2[0]
+for j in range (len(l2)):
+        if j !=0 :    
+            res2= res2+ l2[j]*10**j
+res= res1+ res2
+i= 0
+while res > 0:
+    mode= res % 10
+    list1.append(mode)
+    res= res// 10
+    i+=1
+print(list1)
